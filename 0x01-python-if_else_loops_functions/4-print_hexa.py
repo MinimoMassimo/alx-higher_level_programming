@@ -11,7 +11,7 @@ for i in range(99):
         remainder = 'd'
     elif remainder == 14:
         remainder = 'e'
-    elif remainder ==  15:
+    elif remainder == 15:
         remainder = 'f'
     x = i / 16
     print(f"{i} = 0x{int(x)}{remainder}")

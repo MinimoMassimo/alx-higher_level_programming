@@ -6,5 +6,4 @@ def uppercase(str):
         else:
             x = chr(uni - 32)
         print(x, end='')
-        
     print()
