@@ -14,6 +14,6 @@ for i in range(99):
     elif remainder == 15:
         remainder = 'f'
     x = int(i / 16)
-    if i < 10:
+    if i < 16:
         x = ''
     print("{} = 0x{}{}".format(i, x, remainder))
