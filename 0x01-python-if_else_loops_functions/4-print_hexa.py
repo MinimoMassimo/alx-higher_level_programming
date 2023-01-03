@@ -13,5 +13,7 @@ for i in range(99):
         remainder = 'e'
     elif remainder == 15:
         remainder = 'f'
-    x = i / 16
-    print("{} = 0x{}{}".format(i, int(x), remainder))
+    x = int(i / 16)
+    if i < 10:
+        x = ''
+    print("{} = 0x{}{}".format(i, x, remainder))
