@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -22,15 +23,22 @@ int is_palindrome(listint_t **head)
 		temp = temp->next;
 		len++;
 	}
-	for (; len > 0; len--)
+	
+	for (; len >= 0; len--)
 	{
+		for (i = 0; temp->next && i < len - 1; i++)
+			temp = temp->next;
+		/*
+		printf("main:%d ", main->n);
+		printf("temp:%d ", temp->n);
+		*/
 		if (main->n != temp->n)
 			return (0);
-		if (main)
+		
+		if (main->next)
 		       main = main->next;
 		temp = *head;
-		for (i = 0; temp && i < len; i++)
-			temp = temp->next;
-	}	
+	}
+
 	return (1);
 }
