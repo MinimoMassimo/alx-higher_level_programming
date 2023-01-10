@@ -29,10 +29,10 @@ int is_palindrome(listint_t **head)
 		
 		for (i = 0; temp->next && i < len - 1; i++)
 			temp = temp->next;
-		
+		/*
 		printf("main:%d ", main->n);
 		printf("temp:%d ", temp->n);
-		
+		*/
 		if (main->n != temp->n)
 			return (0);
 		
