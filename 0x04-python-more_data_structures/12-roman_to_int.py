@@ -13,7 +13,7 @@ def roman_to_int(roman_string):
             i += 1
         elif a == 'V':
             if idx != 0 and prev == 'I':
-                i = i +3
+                i += 3
             else:
                 v += 1
         elif a == 'X':
