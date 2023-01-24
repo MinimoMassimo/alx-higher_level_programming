@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''
-Module 2-square
-Defines class Square with private attribute size
+Module 3-square
+Defines class Square with private attribute size and public instance method area
 '''
 
 
@@ -25,3 +25,13 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
+
+    def area(self):
+        '''
+        Calculates and returns the area of the square
+
+        Attributes:
+            self: its attribut __size
+        '''
+        area = self.__size ** 2
+        return area
