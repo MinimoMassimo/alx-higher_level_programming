@@ -11,14 +11,23 @@ class Square:
 
     Args:
         size (int): size of a side
+
+    Functions:
+        __init__(self, size, position)
+        size(self)
+        size(self, value)
+        position(self)
+        position(self, value)
+        area(self)
+        my_print(self)
     '''
     def __init__(self, size=0, position=(0, 0)):
         '''
         Initializes square
 
         Attributes:
-            size: has to be int
-            position
+            size (int): has to be int
+            position (int): tuple of two positive integers
         '''
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -37,7 +46,8 @@ class Square:
         '''
         Calculates and returns the area of the square
 
-        Returns: area
+        Returns:
+            area
         '''
         area = self.__size ** 2
         return area
@@ -45,7 +55,7 @@ class Square:
     @property
     def size(self):
         '''
-        Gets the value __size
+        Getter
 
         Return: size
         '''
@@ -56,7 +66,7 @@ class Square:
         '''
         Sets the value __size
 
-        Attributes:
+        Args:
             value: the new value to be
         '''
         if not isinstance(value, int):
@@ -86,14 +96,17 @@ class Square:
     def position(self):
         '''
         Getter
+
+        Return: position
         '''
         return self.__position
+
     @position.setter
     def position(self, value):
         '''
         Setter
 
-        Attributes:
+        Args:
             value : the new value to be of position
         '''
         if not isinstance(position, tuple) or len(position) != 2:
