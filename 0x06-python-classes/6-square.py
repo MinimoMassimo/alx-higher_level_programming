@@ -82,12 +82,13 @@ class Square:
                     print("#", end='')
                 print()
 
+    @property
     def position(self):
         '''
         Getter
         '''
         return self.__position
-
+    @position.setter
     def position(self, value):
         '''
         Setter
