@@ -43,6 +43,7 @@ class Rectangle:
         """ getter of width attribute
         """
         return self.__width
+
     @property
     def height(self):
         """getter of height attribute
@@ -65,7 +66,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """setter of height attribute
- 
+
             Args:
                 value : has to be positive int
         """

@@ -21,6 +21,7 @@ class Rectangle:
             __repr__
             __del__
     """
+
     def __init__(self, width=0, height=0):
         """Initializes the attributes width and height
             Attributes:
@@ -44,6 +45,7 @@ class Rectangle:
         """ getter of width attribute
         """
         return self.__width
+
     @property
     def height(self):
         """getter of height attribute
@@ -66,7 +68,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """setter of height attribute
- 
+
             Args:
                 value : has to be positive int
         """
