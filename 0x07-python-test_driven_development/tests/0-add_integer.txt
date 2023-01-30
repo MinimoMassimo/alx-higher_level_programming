@@ -1,0 +1,44 @@
+Using ''add_integer''
+------------------------
+
+Parameter 'b' had default value "98" (int)
+Ensures that arguments 'a' and 'b' are both integers
+Returns the sum of the params
+
+First import the method
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+Basic usage:
+	>>> add_integer(2, 3)
+	5
+
+Negative input:
+	>>> add_integer(3, -2)
+	1
+
+Only one input:
+	>>> add_integer(90)
+	188
+
+Float input:
+	>>> add_integer(2.3, 8.2)
+	10
+
+Float and negative input:
+	>>> add_integer(2.3, -8.2)
+	-6
+
+String input:
+	>>> add_integer(3, "Abc")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+Double string input:
+	>>> add_integer("abc", "EFG")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
