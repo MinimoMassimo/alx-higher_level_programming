@@ -1,0 +1,47 @@
+Using ''say_my_name''
+-----------------------
+
+
+Attribute 'last_name' is set to default ""
+Checks if first_name is string
+Checks if last_name i sstring
+Prints 'My name is <first_name> <last_name>
+
+
+First import method
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now use it:
+
+Basic usage:
+	>>> say_my_name("Shelly", "Shelby")
+	My name is Shelly Shelby
+
+If only one input:
+	>>> say_my_name("Shelly")
+	My name is Shelly 
+
+If input is not of type string:
+	>>> say_my_name(9)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Both input not string:
+	>>> say_my_name(7, 9)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+If last name is not string:
+	>>> say_my_name("Shelly", 9.7)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+If no input:
+	>>> say_my_name()
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
