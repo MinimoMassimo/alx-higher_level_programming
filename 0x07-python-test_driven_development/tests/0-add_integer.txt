@@ -14,11 +14,12 @@ Now use it:
 Basic usage:
 	>>> add_integer(2, 3)
 	5
+
 No input:
 	>>> add_integer()
 	Traceback (most recent call last):
 	...
-	TypeError: add_integer() missing 1 required positional arguments: 'a'
+	TypeError: add_integer() missing 1 required positional argument: 'a'
 
 Float NaN as input:
 	>>> add_integer(float('NaN'))
