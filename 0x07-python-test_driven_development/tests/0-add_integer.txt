@@ -27,6 +27,10 @@ Float NaN as input:
 	...
 	ValueError: cannot convert float NaN to integer
 
+Float overflow:
+	>>> add_integer(1500.5)
+	1598
+
 Negative input:
 	>>> add_integer(3, -2)
 	1
