@@ -1,0 +1,70 @@
+Using "MyList"
+----------------
+
+First import class:
+	>>> MyList = __import__('1-my_list').MyList
+
+Now use it:
+
+Basic usage:
+	>>> ml = MyList()
+	>>> ml.append(1)
+	>>> ml.append(6)
+	>>> ml.append(5)
+	>>> ml.print_sorted()
+	[1, 5, 6]
+
+No input:
+	>>> ml = MyList()
+	>>> ml.print_sorted()
+	[]
+
+Non int input:
+	>>> ml = MyList()
+	>>> ml.append(2)
+	>>> ml.append("hi")
+	>>> ml.append("0")
+	>>> ml.print_sorted()
+	Traceback (most recent call last):
+	...
+	TypeError: '<' not supported between instances of 'str' and 'int'
+
+Non MyList list:
+	>>> ml = [1, 6, 5]
+	>>> ml.print_sorted()
+	Traceback (most recent call last):
+	...
+	AttributeError: 'list' object has no attribute 'print_sorted'
+
+One string input in instance constructor:
+	>>> ml = MyList("a")
+	>>> ml.print_sorted()
+	['a']
+
+One int input in instance constructor:
+	>>> ml = MyList(1)
+	Traceback (most recent call last):
+	...
+	TypeError: 'int' object is not iterable
+
+One string input in instance constructor and one append:
+	>>> ml = MyList("a")
+	>>> ml.append(1)
+	>>> ml.print_sorted()
+	Traceback (most recent call last):
+	...
+	TypeError: '<' not supported between instances of 'int' and 'str'
+
+Negative int input:
+	>>> ml = MyList()
+	>>> ml.append(0)
+	>>> ml.append(-9)
+	>>> ml.append(8)
+	>>> ml.print_sorted()
+	[-9, 0, 8]
+
+Only one input:
+	>>> ml = MyList()
+	>>> ml.append(0)
+	>>> ml.print_sorted()
+	[0]

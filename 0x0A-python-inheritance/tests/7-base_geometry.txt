@@ -1,0 +1,59 @@
+Using "base_geometry"
+-------------------------
+
+First import class:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Now use it:
+
+Basic usage:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("a", 9)
+
+0 int value:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("a", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: a must be greater than 0
+
+Negative int value:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("a", -9)
+	Traceback (most recent call last):
+	...
+	ValueError: a must be greater than 0
+
+Non-int value:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("a", "b")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+No value:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+One input:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("a")
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Input in instance constructor:
+	>>> bg = BaseGeometry("a")
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry() takes no arguments
+
+Not type BaseGeometry:
+	>>> bg = (1, 2)
+	>>> bg.integer_validator("a", 1)
+	Traceback (most recent call last):
+	...
+	AttributeError: 'tuple' object has no attribute 'integer_validator'
