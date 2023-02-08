@@ -65,6 +65,13 @@ Check for area:
 	...
 	Exception: area() is not implemented
 
+Integer__validator with list input:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", [3])
+	Traceback (most recent call last):
+	...
+	TypeError: age must be an integer
+
 Integer_validator with tuple input:
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("age", (4,))
