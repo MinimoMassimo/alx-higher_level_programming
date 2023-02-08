@@ -32,7 +32,6 @@ class Student:
                     Otherwise, all should be returned
         """
         if isinstance(attrs, list):
-            print("yes")
             a_dict = {}
             for x in attrs:
                 if x in self.__dict__:
