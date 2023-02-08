@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """module 7
+    script that adds all argumets to a python list
+    list is saved to a file
 """
 import sys
 import json

@@ -13,7 +13,7 @@ def pascal_triangle(n):
         return [[1]]
     if n == 2:
         return [[1], [1, 1]]
-    
+
     list_of_list = [[1], [1, 1]]
     for i in range(2, n):
         prev = list_of_list[i - 1]

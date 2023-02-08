@@ -39,7 +39,7 @@ class Student:
                 if x in self.__dict__:
                     a_dict[x] = self.__dict__[x]
             return a_dict
-        return self.__dict__ 
+        return self.__dict_
 
     def reload_from_json(self, json):
         """replaces all attributes of this instance
