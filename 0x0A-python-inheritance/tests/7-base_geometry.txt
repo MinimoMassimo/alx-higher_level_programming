@@ -57,3 +57,38 @@ Not type BaseGeometry:
 	Traceback (most recent call last):
 	...
 	AttributeError: 'tuple' object has no attribute 'integer_validator'
+
+Check for area:
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+
+Integer_validator with tuple input:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", (4,))
+	Traceback (most recent call last):
+	...
+	TypeError: age must be an integer
+
+Integer_validator with weird input:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", {3, 4})
+	Traceback (most recent call last):
+	...
+	TypeError: age must be an integer
+
+Integer_validator with bool input:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", True)
+	Traceback (most recent call last):
+	...
+	TypeError: age must be an integer
+
+Int_validator with None input:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", None)
+	Traceback (most recent call last):
+	...
+	TypeError: age must be an integer
