@@ -15,8 +15,11 @@ def pascal_triangle(n):
         return [[1], [1, 1]]
     
     list_of_list = [[1], [1, 1]]
-    for i in range(3, n - 2):
-        list_of_list[i].append(1)
-        for j in range(0, list[i - 1], +2):
-            
-        list_fo_list[i].append(1)
+    for i in range(2, n):
+        prev = list_of_list[i - 1]
+        temp = [1]
+        for j in range(0, len(prev) - 1):
+            temp.append(prev[j] + prev[j + 1])
+        temp.append(1)
+        list_of_list.append(temp)
+    return list_of_list
