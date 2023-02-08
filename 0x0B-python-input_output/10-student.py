@@ -34,7 +34,9 @@ class Student:
         if isinstance(attrs, list):
             a_dict = {}
             for x in attrs:
-                if x in self.__dict__:
+                if not isinstance(x, str):
+                    return self.__dict__
+                if x in self.__dict__.keys():
                     a_dict[x] = self.__dict__[x]
             return a_dict
         return self.__dict__
