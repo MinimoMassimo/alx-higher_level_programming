@@ -40,7 +40,7 @@ class Student:
                 if x in self.__dict__.keys():
                     a_dict[x] = self.__dict__[x]
             return a_dict
-        return self.__dict_
+        return self.__dict__
 
     def reload_from_json(self, json):
         """replaces all attributes of this instance
