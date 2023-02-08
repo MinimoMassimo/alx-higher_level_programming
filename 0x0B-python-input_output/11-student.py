@@ -47,5 +47,5 @@ class Student:
                 json : always a dictionary with key = public attribute name
                     and value = val of the public attribute
         """
-        for x in json:
+        for x in json.keys():
             self.__dict__[x] = json[x]
