@@ -51,16 +51,19 @@ class Rectangle(Base):
         '''getter
         '''
         return self.__width
+
     @property
     def height(self):
         '''getter
         '''
         return self.__height
+
     @property
     def x(self):
         '''getter
         '''
         return self.__x
+
     @property
     def y(self):
         '''getter
@@ -76,7 +79,7 @@ class Rectangle(Base):
         if val <= 0:
             raise ValueError("width must be > 0")
         self.__width = val
-    
+
     @height.setter
     def height(self, val):
         '''setter
@@ -86,7 +89,7 @@ class Rectangle(Base):
         if val <= 0:
             raise ValueError("height must be > 0")
         self.__height = val
-    
+
     @x.setter
     def x(self, val):
         '''setter
@@ -96,7 +99,7 @@ class Rectangle(Base):
         if val < 0:
             raise ValueError("x must be >= 0")
         self.__x = val
-    
+
     @y.setter
     def y(self, val):
         '''setter
@@ -124,7 +127,12 @@ class Rectangle(Base):
     def __str__(self):
         '''this is what it prints if print(Rectange) is called
         '''
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        i = self.id
+        x = self.__x
+        y = self.__y
+        width = self.__width
+        height = self.__height
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(i, x, y, width, height)
 
     def update(self, *args, **kwargs):
         '''assigns an argument to each attribute
@@ -154,7 +162,10 @@ class Rectangle(Base):
                 self.__y = kwargs["y"]
 
     def to_dictionary(self):
-        dct = {"id" : self.id, "width" : self.__width, "height" : self.__height}
+        i = self.id
+        width = self.__width
+        height = self.__height
+        dct = {"id": i, "width": width, "height": height}
         dct["x"] = self.__x
         dct["y"] = self.__y
         return dct

@@ -13,12 +13,13 @@ class Base:
         __init__(self)
     '''
     __nb_objects = 0
+
     def __init__(self, id=None):
         '''initializes id
             Arguments:
                 id: int
         '''
-        if not id is None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -74,6 +75,6 @@ class Base:
                 inst = cls.from_json_string(f.read())
             for i, dict in enumerate(inst):
                 lst.append(cls.create(**inst[i]))
-        except:
-           pass
+        except Exception:
+            pass
         return lst

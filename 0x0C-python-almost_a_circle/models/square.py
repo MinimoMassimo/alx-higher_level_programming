@@ -15,13 +15,18 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.height)
+        i = self.id
+        x = self.__x
+        y = self.__y
+        height = self.__height
+        return "[Square] ({}) {}/{} - {}".format(i, x, y, height)
 
     @property
     def size(self):
         '''getter
         '''
         return self.height
+
     @size.setter
     def size(self, val):
         '''setter
@@ -52,7 +57,7 @@ class Square(Rectangle):
                 self.height = kwargs["size"]
                 self.width = kwargs["size"]
             Rectangle.update(self, **kwargs)
-    
+
     def to_dictionary(self):
-        dct = {"id" : self.id, "size" : self.width, "x" : self.x, "y" : self.y}
+        dct = {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
         return dct
