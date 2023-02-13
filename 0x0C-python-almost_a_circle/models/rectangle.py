@@ -41,10 +41,10 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
 
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -113,25 +113,25 @@ class Rectangle(Base):
     def area(self):
         '''returns area
         '''
-        return self.__height * self.__width
+        return self.height * self.width
 
     def display(self):
         '''prints in stdout theRectablge instance with '#'
         '''
-        for j in range(self.__y):
+        for j in range(self.y):
             print()
-        for i in range(self.__height):
-            print(' '*self.__x, end='')
-            print('#'*self.__width)
+        for i in range(self.height):
+            print(' '*self.x, end='')
+            print('#'*self.width)
 
     def __str__(self):
         '''this is what it prints if print(Rectange) is called
         '''
         i = self.id
-        x = self.__x
-        y = self.__y
-        width = self.__width
-        height = self.__height
+        x = self.x
+        y = self.y
+        width = self.width
+        height = self.height
         return "[Rectangle] ({}) {}/{} - {}/{}".format(i, x, y, width, height)
 
     def update(self, *args, **kwargs):
@@ -139,33 +139,36 @@ class Rectangle(Base):
         '''
         if args:
             for k, v in enumerate(args):
+                """if not isinstance(v, int):
+                    raise TypeError("{} must be an integer".format(it))
+                """
                 if k == 0:
                     self.id = args[0]
                 elif k == 1:
-                    self.__width = args[1]
+                    self.width = args[1]
                 elif k == 2:
-                    self.__height = args[2]
+                    self.height = args[2]
                 elif k == 3:
-                    self.__x = args[3]
+                    self.x = args[3]
                 elif k == 4:
-                    self.__y = args[4]
+                    self.y = args[4]
         elif kwargs:
             if "id" in kwargs:
                 self.id = kwargs["id"]
             if "width" in kwargs:
-                self.__width = kwargs["width"]
+                self.width = kwargs["width"]
             if "height" in kwargs:
-                self.__height = kwargs["height"]
+                self.height = kwargs["height"]
             if "x" in kwargs:
-                self.__x = kwargs["x"]
+                self.x = kwargs["x"]
             if "y" in kwargs:
-                self.__y = kwargs["y"]
+                self.y = kwargs["y"]
 
     def to_dictionary(self):
         i = self.id
-        width = self.__width
-        height = self.__height
+        width = self.width
+        height = self.height
         dct = {"id": i, "width": width, "height": height}
-        dct["x"] = self.__x
-        dct["y"] = self.__y
+        dct["x"] = self.x
+        dct["y"] = self.y
         return dct

@@ -14,13 +14,6 @@ class Square(Rectangle):
         '''
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        i = self.id
-        x = self.__x
-        y = self.__y
-        height = self.__height
-        return "[Square] ({}) {}/{} - {}".format(i, x, y, height)
-
     @property
     def size(self):
         '''getter
@@ -33,6 +26,14 @@ class Square(Rectangle):
         '''
         self.width = val
         self.height = val
+
+    def __str__(self):
+        """returns string representation"""
+        i = self.id
+        x = self.x
+        y = self.y
+        height = self.height
+        return "[Square] ({}) {}/{} - {}".format(i, x, y, height)
 
     def update(self, *args, **kwargs):
         '''updates values using parent method
