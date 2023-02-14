@@ -60,5 +60,7 @@ class Square(Rectangle):
             Rectangle.update(self, **kwargs)
 
     def to_dictionary(self):
+        '''returns dictionary representation of instance
+        '''
         dct = {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
         return dct
