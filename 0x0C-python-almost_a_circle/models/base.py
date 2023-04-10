@@ -78,3 +78,40 @@ class Base:
         except Exception:
             pass
         return lst
+
+    @classmethod
+    def save_to_file_cvs(cls, list_objs):
+        """saves to cvs file
+        """
+        filename = cls.__name__ + ".json"
+        objs = []
+        if list_objs is not None:
+            for i in list_objs:
+                if i.__class__ == Rectangle:
+                    w = i.width
+                    h = i.height
+                    objs.append("{},{},{},{},{}".format(i.id, w, h, i.x, i.y))
+                if i.__class__ == Square:
+                    objs.append("{},{},{},{}".format(i.id, i.size, i.x, i.y))
+        with open(filename, "w") as f:
+            f.write(objs)
+    
+    @classmethod
+    def load_from_file_cvs(cls):
+        """loads from cvs file
+        """
+        filename = cls.__name__ + ".json"
+        lst = []
+        try:
+            with open(filename, "r") as f:
+                inst = f.read()
+            for i in inst:
+                l = i.split(',')
+                if cls.__name__ == "Square":
+                    dummy = cls(l[1], l[2], l[3], l[0])
+                if cls.__name__ == "Rectangle":
+                    dummy = cls(l[1], l[2], l[3], l[4], l[0])
+                lst.append(dummy)
+        except Exception:
+            pass
+        return lst
