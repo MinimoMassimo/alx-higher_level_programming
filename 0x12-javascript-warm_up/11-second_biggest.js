@@ -9,7 +9,6 @@ if (args.length === 0 || args.length === 1) {
     if (args[i] > Max) Max = args[i];
   }
   for (let i = 0; i < args.length; i++) {
-    // console.log(i);
     if (args[i] > sol && args[i] < Max) sol = args[i];
   }
   console.log(sol);
