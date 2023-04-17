@@ -19,8 +19,8 @@ if __name__ == "__main__":
     stmt = select(State).where(State.id == 1)
     with engine.connect() as conn:
         rows = conn.execute(stmt)
-        if len(rows) == 0:
+        if rows is None:
             print('Nothing')
-            return
+            exit()
         for x in rows:
             print("{}: {}".format(x[0], x[1]))
